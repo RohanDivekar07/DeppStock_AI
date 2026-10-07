@@ -1,0 +1,27 @@
+# Web Framework and Server
+fastapi
+uvicorn
+jinja2
+python-multipart
+
+# News Aggregation & Scraping
+requests
+selenium
+webdriver-manager
+beautifulsoup4
+python-dotenv
+
+# Machine Learning & NLP
+torch
+transformers
+numpy
+sentence-transformers
+
+# LangChain & Vector Database
+langchain
+langchain-community
+langchain-google-genai
+chromadb
+
+# Visualization & Utils
+matplotlib

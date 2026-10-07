@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}AI Chatbot | SAP-Stocks{% endblock %}
+{% block content %}
+    <div class="info-section">
+        <h2>AI Chatbot - Ask about Stock News</h2>
+        <form method="post" action="/chatbot">
+            <input type="hidden" name="ticker" value="{{ ticker or '' }}">
+            <input type="hidden" name="chat_history" value="{{ chat_history|tojson|safe }}">
+            <label for="user_query">Your question:</label>
+            <input type="text" id="user_query" name="user_query" required>
+            <button type="submit">Ask</button>
+        </form>
+        {% if chat_history %}
+            <div style="margin-top: 2em;">
+                <h3>Chat History</h3>
+                {% for message in chat_history %}
+                    <div style="background-color: {% if message.role == 'user' %}#f0f2f6{% else %}#e3f2fd{% endif %}; padding: 10px; border-radius: 5px; margin-bottom: 10px;">
+                        <strong>{% if message.role == 'user' %}You{% else %}AI Assistant{% endif %}:</strong> {{ message.content }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+{% endblock %} 

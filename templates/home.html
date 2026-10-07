@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}Home | SAP-Stocks{% endblock %}
+{% block content %}
+    <div class="info-section" style="text-align:center;">
+        <h2>Welcome to SAP-Stocks</h2>
+        <p>
+            <strong>SAP-Stocks</strong> is a modern web application that leverages AI to provide real-time stock news sentiment analysis and an interactive chatbot for financial news queries. Stay informed about the latest market trends and make smarter investment decisions with the power of AI.
+        </p>
+    </div>
+    <div class="cards">
+        <div class="card">
+            <div class="card-title">Real-Time Insights</div>
+            <div class="card-desc">Get up-to-date news and sentiment analysis for any stock ticker, helping you react quickly to market changes.</div>
+        </div>
+        <div class="card">
+            <div class="card-title">AI-Powered Chatbot</div>
+            <div class="card-desc">Ask questions about stock news and receive concise, factual answers powered by advanced language models and retrieval-augmented generation.</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Sentiment Analysis</div>
+            <div class="card-desc">Understand the market mood with financial sentiment classification using the finBERT model, tailored for finance news.</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Unified Dashboard</div>
+            <div class="card-desc">Access news, sentiment, and AI chat in one place, making your research and decision-making seamless and efficient.</div>
+        </div>
+    </div>
+    <div style="display:flex;justify-content:center;gap:40px;margin:40px 0;">
+        <a href="/news" class="nav-btn" style="font-size:1.3em;padding:20px 48px;">News & Sentiment</a>
+        <a href="/chatbot" class="nav-btn" style="font-size:1.3em;padding:20px 48px;">AI Chatbot</a>
+    </div>
+{% endblock %} 

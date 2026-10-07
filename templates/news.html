@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}News & Sentiment | SAP-Stocks{% endblock %}
+{% block content %}
+    <div class="info-section">
+        <h2>News & Sentiment</h2>
+        <form method="post" action="/news">
+            <label for="ticker">Enter Stock Ticker Symbol:</label>
+            <input type="text" id="ticker" name="ticker" value="{{ ticker or '' }}" required>
+            <button type="submit">Fetch News</button>
+        </form>
+        {% if sentiment_summary %}
+            <h3>Sentiment Summary</h3>
+            <ul>
+                <li>Positive: {{ sentiment_summary['positive'] }}</li>
+                <li>Neutral: {{ sentiment_summary['neutral'] }}</li>
+                <li>Negative: {{ sentiment_summary['negative'] }}</li>
+            </ul>
+        {% endif %}
+        {% if articles %}
+            <h3>Latest News Articles</h3>
+            <ul>
+            {% for article in articles %}
+                <li style="margin-bottom: 1em;">
+                    <strong>{{ article.title }}</strong><br>
+                    <em>Source: {{ article.source.name }} | Published: {{ article.publishedAt }}</em><br>
+                    <span>Sentiment: {{ article.sentiment.label|capitalize }} ({{ '%.2f' % article.sentiment.score }})</span><br>
+                    <a href="{{ article.url }}" target="_blank">Read Full Article</a>
+                </li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+{% endblock %} 

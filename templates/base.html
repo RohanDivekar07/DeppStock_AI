@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}SAP-Stocks{% endblock %}</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header style="background:#1976d2;color:#fff;padding:18px 0;text-align:center;">
+        <h1 style="margin:0;">SAP-Stocks: Stock News Sentiment & AI Chatbot</h1>
+        <nav class="nav" style="justify-content:center;margin-top:10px;">
+            <a href="/" class="nav-btn">Home</a>
+            <a href="/news" class="nav-btn">News & Sentiment</a>
+            <a href="/chatbot" class="nav-btn">AI Chatbot</a>
+        </nav>
+    </header>
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+    <footer style="background:#f4f8fb;color:#1976d2;text-align:center;padding:16px 0;margin-top:40px;font-size:1.1em;">
+        Made by Nikhil Vijay Divekar
+    </footer>
+</body>
+</html> 
